@@ -4,7 +4,9 @@
 
 ## 示例
 原图：http://localhost:8080/imgs/123.jpg
+
 获取50x50：http://localhost:8080/imgs/123.jpg_50x50.jpg
+
 获取100x100：http://localhost:8080/imgs/123.jpg_100x100.jpg
 
 ## Quick start
