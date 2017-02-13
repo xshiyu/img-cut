@@ -1,38 +1,24 @@
-# mybatis-geneator-tool
-## ½éÉÜ
-- ¿ÉÍ¨¹ı´Ë¹¤¾ß×Ô¶¯Éú³ÉMybatis XMLÎÄ¼şºÍdaoµÄclassÀà
-- ¿É½áºÏBaseDaoÍê³É»ù´¡²Ù×÷£¬BaseDaoÖ§³ÖµÄ·½·¨ÈçÏÂ
-```java
-public interface BaseDao<T> {
-	//¸ù¾İÊµÌå¶ÔÏóĞÂÔö¼ÇÂ¼
-	long insert(T entity);
-	//ÅúÁ¿±£´æ¶ÔÏó
-	long insert(List<T> list);
-	//¸üĞÂÊµÌå¶ÔÓ¦µÄ¼ÇÂ¼
-	long update(T entity);
-	//¸ù¾İID²éÕÒ¼ÇÂ¼
-	T getById(long id);
-	//¸ù¾İIDÉ¾³ı¼ÇÂ¼
-	int deleteById(long id);
-	//·ÖÒ³²éÑ¯
-	PageBean<T> listPage(PageParam pageParam, Map<String, Object> paramMap);
-	//¸ù¾İÌõ¼ş·ÖÒ³²éÑ¯
-	PageBean<T> listPage(PageParam pageParam, Map<String, Object> paramMap, String sqlId);
-	//¸ù¾İÌõ¼ş²éÑ¯£¬·µ»ØÁĞ±í
-	List<T> listBy(Map<String, Object> paramMap);
-	List<T> listBy(Map<String, Object> paramMap, String sqlId);
-	//¸ù¾İÌõ¼ş²éÑ¯·µ»Øµ¥¸ö¶ÔÏó
-	T getBy(Map<String, Object> paramMap);
-	T getBy(Map<String, Object> paramMap, String sqlId);
-}
-```
+# img-cut
+## ä»‹ç»
+é€šè¿‡è¿‡æ»¤å™¨å®ç°å›¾ç‰‡çš„ç­‰æ¯”ä¾‹å‹ç¼©
+
+## ç¤ºä¾‹
+åŸå›¾ï¼šhttp://localhost:8080/imgs/123.jpg
+è·å–50x50ï¼šhttp://localhost:8080/imgs/123.jpg_50x50.jpg
+è·å–100x100ï¼šhttp://localhost:8080/imgs/123.jpg_100x100.jpg
 
 ## Quick start
-1¡¢±àĞ´ÊµÌå
+åœ¨web.xmlä¸­é…ç½®è¿‡æ»¤å™¨å³å¯
 
-2¡¢ÔÚMain·½·¨ÖĞÖ¸¶¨ÊµÌåÀàclass¡¢±íÃû
-
-3¡¢ÔËĞĞmain·½·¨
-
-## ºóÆÚ¼Æ»®
-1¡¢ÅäÖÃJDBC£¬×Ô¶¯Á¬½Óµ½mysql£¬Éú³ÉÊµÌå¡¢dao¡¢XML MapperÎÄ¼ş
+## é…åˆnginxä½¿ç”¨
+åœ¨Nginxä¸­åˆ¤æ–­è®¿é—®çš„å›¾ç‰‡æ˜¯å¦å­˜åœ¨ï¼Œå¦‚æœä¸å­˜åœ¨ï¼Œäº¤ç»™tomcatå¤„ç†
+```shell
+location ~.*\.(htm|html|gif|jpg|jpeg|png|ico|rar|css|js|zip|txt|flv|swf|doc|ppt|xls|pdf)$ {
+     if (!-e $request_filename) {
+         proxy_pass http://127.0.0.1:8080;
+     }
+     root /home/tomcat/web/tomcat/tomcat/webapps/ROOT;
+     access_log off;
+     expires 30d;
+}
+```
